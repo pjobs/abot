@@ -78,6 +78,7 @@ namespace Abot.Core
             try
             {
                 request = BuildRequestObject(uri);
+                request.Credentials = System.Net.CredentialCache.DefaultCredentials;
                 crawledPage.RequestStarted = DateTime.Now;
                 response = (HttpWebResponse)request.GetResponse();
                 ProcessResponseObject(response);
